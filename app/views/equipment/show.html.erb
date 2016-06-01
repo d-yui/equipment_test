@@ -1,0 +1,21 @@
+<% provide(:title, @equipment.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <table>
+      <tr>
+        <td>端末名</td>
+        <td><%= @equipment.name %></td>
+      </tr>
+      <tr>
+        <td>型番</td>
+        <td><%= @equipment.model_number %></td>
+      </tr>
+      <tr>
+        <td>導入日</td>
+        <td><%= @equipment.start_date %></td>
+      </tr>
+    </table>
+    </section>
+  </aside>
+</div>
