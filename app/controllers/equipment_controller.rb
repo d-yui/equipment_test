@@ -12,11 +12,17 @@ class EquipmentController < ApplicationController
   end
 
   def index
-    @equipment = Equipment.all
+    @equipment = Equipment.paginate(page: params[:page])
   end
 
   def list
 
+  end
+
+  def destroy
+    Equipment.find(params[:id]).destroy
+    flash[:success] = "削除成功"
+    redirect_to equipment_index_url
   end
 
   def create
