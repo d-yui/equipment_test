@@ -1,2 +1,19 @@
-<h1>Equipment#edit</h1>
-<p>Find me in app/views/equipment/edit.html.erb</p>
+<% provide(:title, :name) %>
+<h1>端末導入 情報更新</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@equipment) do |f| %>
+      <%= f.label "端末名" %>
+      <%= f.text_field :name %>
+
+      <%= f.label "型番" %>
+      <%= f.text_field :model_number %>
+
+      <%= f.label "導入開始日" %>
+      <%= f.text_field :start_date %>
+
+      <%= f.submit "更新", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

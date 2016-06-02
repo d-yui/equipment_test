@@ -1,0 +1,19 @@
+<% provide(:title, 'equipment') %>
+<h1>全備品一覧</h1>
+
+<ul class="equipment">
+  <table>
+  <tr>
+    <td>端末名</td>
+    <td>型番</td>
+    <td>導入日</td>
+  </tr>
+  <% @equipment.each do |equipment| %>
+  <tr>
+    <td><%= link_to equipment.name ,equipment%></td>
+    <td><%= equipment.model_number %></td>
+    <td><%= equipment.start_date %></td>
+  </tr>
+  <% end %>
+  </table>
+</ul>

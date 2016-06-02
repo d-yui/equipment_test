@@ -7,6 +7,17 @@ class EquipmentController < ApplicationController
     @equipment = Equipment.find(params[:id])
   end
 
+  def edit
+    @equipment = Equipment.find(params[:id])
+  end
+
+  def index
+    @equipment = Equipment.all
+  end
+
+  def list
+
+  end
 
   def create
     @equipment = Equipment.new(equipment_params)    # 実装は終わっていないことに注意!
@@ -14,6 +25,16 @@ class EquipmentController < ApplicationController
       redirect_to @equipment
     else
       render 'list'
+    end
+  end
+
+  def update
+    @equipment = Equipment.find(params[:id])
+    if @equipment.update_attributes(equipment_params)
+      flash[:success] = "更新成功"
+      redirect_to @equipment
+    else
+      render 'edit'
     end
   end
 
