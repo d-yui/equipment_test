@@ -1,0 +1,24 @@
+<% provide(:title, @equipment.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <table>
+      <tr>
+        <td>端末名</td>
+        <td><%= @equipment.name %></td>
+      </tr>
+      <tr>
+        <td>型番</td>
+        <td><%= @equipment.model_number %></td>
+      </tr>
+      <tr>
+        <td>導入日</td>
+        <td><%= @equipment.start_date %></td>
+      </tr>
+    </table>
+    <%= link_to "情報更新" ,edit_equipment_path %>
+    <%= link_to "一覧ヘ戻る" ,equipment_index_path %>
+    <%= link_to "削除", @equipment, method: :delete,data: { confirm: "削除を行いますがよろしいですか？" } %>
+    </section>
+  </aside>
+</div>
